@@ -1,0 +1,29 @@
+<p>
+  <b>employee-details</b>
+</p>
+<div class="container">
+  <div class="row">
+      <div class="col md4 offset-2">
+        <table>
+<thead>
+  <tr>
+    <th>EmpCode</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Salary</th>
+    <th>Date Of Birth</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let emp of employees">
+    <td>{{emp.code | uppercase}}</td>
+    <td>{{emp.name | employeepipe:emp.gender}}</td>
+    <td>{{emp.gender}}</td>
+    <td>{{emp.salary | currency:'USD':'symbol': '1.2-3' }}</td>
+    <td>{{emp.dateofbirth |date :'fullDate'}}</td>
+  </tr>
+</tbody>
+        </table>
+      </div>
+  </div>
+</div>
